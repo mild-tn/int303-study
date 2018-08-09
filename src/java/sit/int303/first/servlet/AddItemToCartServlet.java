@@ -12,14 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import sit.int303.first.model.PrimeNumber;
-import sun.security.krb5.internal.Krb5;
+import sit.int303.first.model.ShoppingCart;
+import sit.int303.mockup.model.Product;
+import sit.int303.mockup.model.ProductMockup;
 
 /**
  *
  * @author INT303
  */
-public class PrimeNumberServlet extends HttpServlet {
+public class AddItemToCartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,22 +33,19 @@ public class PrimeNumberServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession s = request.getSession(true);// start to ues sassion
-        String n = request.getParameter("number");
-        if (n != null) {
-            int number = Integer.valueOf(n);
-            PrimeNumber pn = (PrimeNumber)s.getAttribute("pn");//ขอข้อมูลจาก session และ casting เป็น PrimeNumber
-//            PrimeNumber pn = new PrimeNumber(number);//เกิดการ new Obj.
-            if(pn == null){
-                pn = new PrimeNumber(number);
-                s.setAttribute("pn", pn);
-            }
-            pn.setNumber(number);
-//            request.setAttribute("pn", pn);
-        }
-        getServletContext().getRequestDispatcher("/PrimeNumberView.jsp").forward(request, response);
+        HttpSession session = request.getSession(true);//ขอ session
+        ShoppingCart cart = (ShoppingCart)session.getAttribute("cart");//down casting กลับ
+        if(cart == null){
+            cart = new ShoppingCart();
+            session.setAttribute("cart", cart);
+        }        
+        String produCode = request.getParameter("productCode");
+        Product p = ProductMockup.getProduct(produCode);
+        cart.add(p);
+//        getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
+//การ faward คือ การส่งข้อมูลข้าม pagse เป็นเหตุว่า ทำไมเวลา refesh หน้าแล้ว add สินค้าจึงเพิ่ม จึงใช้ sendRedirect
+        response.sendRedirect("ProductList");//ใส่เป็น URL  อื่น ก็ได้นะ เวลา refesh(f5) แล้ว มันก็จะไปตาม URL นั้นๆ
     }
-//    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -12,14 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import sit.int303.first.model.PrimeNumber;
-import sun.security.krb5.internal.Krb5;
+import sit.int303.first.model.ShoppingCart;
 
 /**
  *
  * @author INT303
  */
-public class PrimeNumberServlet extends HttpServlet {
+public class ShowCartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,22 +31,12 @@ public class PrimeNumberServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession s = request.getSession(true);// start to ues sassion
-        String n = request.getParameter("number");
-        if (n != null) {
-            int number = Integer.valueOf(n);
-            PrimeNumber pn = (PrimeNumber)s.getAttribute("pn");//ขอข้อมูลจาก session และ casting เป็น PrimeNumber
-//            PrimeNumber pn = new PrimeNumber(number);//เกิดการ new Obj.
-            if(pn == null){
-                pn = new PrimeNumber(number);
-                s.setAttribute("pn", pn);
-            }
-            pn.setNumber(number);
-//            request.setAttribute("pn", pn);
+        HttpSession session = request.getSession(true);
+        ShoppingCart cart = (ShoppingCart)session.getAttribute("cart");
+        if(cart != null){
+            getServletContext().getRequestDispatcher("/ShowCart.jsp").forward(request, response);
         }
-        getServletContext().getRequestDispatcher("/PrimeNumberView.jsp").forward(request, response);
     }
-//    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
