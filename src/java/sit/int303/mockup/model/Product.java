@@ -5,9 +5,10 @@
  */
 
 package sit.int303.mockup.model ;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Product {
+public class Product{
 
     private String productCode;
     private String productName;

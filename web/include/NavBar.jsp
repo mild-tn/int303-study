@@ -1,14 +1,16 @@
+<%-- 
+    Document   : NavBar
+    Created on : Aug 10, 2018, 3:32:13 PM
+    Author     : INT303
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title </title>
         <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" >
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -29,7 +31,7 @@ and open the template in the editor.
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="http://www.google.co.th">Web Programming</a>
+                    <a class="navbar-brand" href="index.html">Web Programming</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="CalculatorForm.html">Test Calculator</a></li>
@@ -39,21 +41,5 @@ and open the template in the editor.
                 </ul>
             </div>
         </nav>
-        <div class="container">
-            <div class="row align-self-center">
-                <div class="col-12">
-                    <hr>
-                     <div class="panel panel-primary">
-                    <div style="color: white" class="panel-heading">My name is Mild Hello !</div>
-                    <div class="panel-body">
-                    <a href="CalculatorForm.html">Test Calculator</a><br>
-                    <a href="PrimeNumber">Test PrimeNumber</a><br>
-                    <a href="TestRequestParam">Test RequestParameter</a><br>
-                    <a href="ProductList">Our Products</a>
-                     </div>
-                     </div>
-                </div>
-            </div>
-        </div>
     </body>
 </html>

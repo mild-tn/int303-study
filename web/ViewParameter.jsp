@@ -13,6 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="include/NavBar.jsp"></jsp:include>
         <h1>Favorite Subject :: </h1>
         <hr>
         <form action="TestRequestParam" method="post">

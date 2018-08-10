@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="include/NavBar.jsp"></jsp:include>
         <h1>Prime Number Application ${pn} :: </h1><hr>
         <form action="PrimeNumber" method="post">
             Please enter Number : 
@@ -20,6 +21,7 @@
         </form>
         <hr>
         <h4>${pn.number} is ${pn.primeNumber ? "" : "not"} prime Number</h4>
+        <p>${pn.primeNumber}</p>
 <!--    //submit กลับมาที่หน้านี้ แล้วเอาผลลัพธ์มาโชว์-->
     </body>
 </html>

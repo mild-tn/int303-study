@@ -3,7 +3,7 @@
     Created on : Aug 6, 2018, 4:10:20 PM
     Author     : INT303
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="include/NavBar.jsp"></jsp:include>
         <h1>Result :: </h1><hr>
         <table>
             <tr>

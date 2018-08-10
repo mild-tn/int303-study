@@ -11,22 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" >
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" ></script>
     </head>
     <body>
+        <jsp:include page="include/NavBar.jsp"></jsp:include>
         <div class="container">
-            <table id="example" class="table ">
-                <tr>
-                <td><h1>Product List ::</h1></td>
-                <td>
-                    <a href="ShowCart">Your Cart:${cart.totalQuantity}</a>
-                </td>
-                </tr>
-            </table>
+            <jsp:include page="include/Header.jsp?title=Produc Listing::"></jsp:include>
             <hr>
             <table id="example" class="table ">
                 <thead>
