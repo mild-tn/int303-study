@@ -23,7 +23,7 @@
             <input type="checkbox" name="subjects" value="WebProgramming" >Web Programming<br>
             <input type="checkbox" name="subjects" value="Computer Network">Computer Network<br>
             <input type="checkbox" name="subjects" value="Network Programming">Network Programming<br>
-            <input type="checkbox" name="subjects" value="Database Adiministrator">Database Adiministrator<br>
+            <input type="checkbox" name="subjects" value="Database Adiministrator">Databases Adiministrator<br>
             <input type="checkbox" name="subjects" value="Software Process">Software Process<br>
             <input type="checkbox" name="subjects" value="Computer Security">Computer Security<br>
             <input type="submit"/>
