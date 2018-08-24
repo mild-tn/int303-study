@@ -17,7 +17,10 @@
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" ></script>
     </head>
-    <body>
+    <body style="background-color:${cookie.bgColor.value}">
+         <hr>
+            Seesion ID :${cookie.JSESSIONID.value}
+        <hr>
         <style>
             a{
                 text-decoration: none;

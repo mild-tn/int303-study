@@ -5,7 +5,7 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<table class="table">
+<table class="table" style="border-color:${cookie.bgColor.value}">
     <tr>
     <tr>
         <td><h3>${param.title}</h3></td>
