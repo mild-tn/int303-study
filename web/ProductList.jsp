@@ -30,21 +30,30 @@
                 </thead>
                 <c:forEach items="${products}" var="p" varStatus="vs">
                     <tr>
-                        <td>${vs.count}</td>
+                         <td>${vs.count}</td>
+                        <td><img src="model-images/${p.productcode}.jpg" width="120"></td>
+                        <td><a href="GetProduct?productCode=${p.productcode}">${p.productcode}</a></td>
+                        <td>${p.productname}</td>
+                        <td>${p.productline.productline}</td>
+                        <td>${p.productscale}</td>
+                        <td>${p.msrp}</td>
+                        
+<%--                        <td>${vs.count}</td>
                         <td><img src="model-images/${p.productCode}.jpg" width="120"></td>
-                        <td>${p.productCode}</td>
+                        <td><a href="GetProduct?productCode=${p.productCode}">${p.productCode}</a></td>
                         <td>${p.productName}</td>
                         <td>${p.productLine}</td>
                         <td>${p.productScale}</td>
-                        <td>${p.msrp}</td>
+                        <td>${p.msrp}</td>--%>
                         <th>
                             <form action="AddItemToCart" method="post">
-                                <input type="hidden" value="${p.productCode}" name="productCode"/>
+                                <%--<input type="hidden" value="${p.productCode}" name="productCode"/>--%>
+                                <input type="hidden" value="${p.productcode}" name="productCode"/>
                                 <input type="submit" value="Add to cart"/>
                             </form>
-<!--                            <a href="AddItemToCart?productCode=${p.productCode}">
+<%--                            <a href="AddItemToCart?productCode=${p.productCode}">
                                 <input type="button" value="Add to cart"/>
-                            </a>-->
+                            </a>--%>
                         </th>
                     </tr>
                 </c:forEach>
