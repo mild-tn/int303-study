@@ -41,6 +41,7 @@
                     <li><a href="PrimeNumber">Test PrimeNumber</a></li>
                     <li><a href="TestRequestParam">Test RequestParameter</a></li>
                     <li><a href="ProductList">Our Products</a></li>
+                    <li><a href="Login">Login</a></li>
                 </ul>
             </div>
         </nav>

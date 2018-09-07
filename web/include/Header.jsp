@@ -14,8 +14,8 @@
                 <a href="ShowCart">Your Cart: (${cart.totalQuantity}) </a>
             </c:if>
             <c:choose>
-                <c:when test="${sessionScope.user != null}">Hello ${sessionScope.user.name}</c:when>
-                <c:otherwise>Hello Gust </c:otherwise>
+                <c:when test="${sessionScope.user != null}">Hello <a href="Logout"> ${sessionScope.user.contactfirstname}</a></c:when>
+                <c:otherwise>Hello <a href="Login">Gust</a> </c:otherwise>
             </c:choose>
         </td>
     </tr>
